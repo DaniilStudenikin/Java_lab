@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
+            integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ=="
+            crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<script>
+    function getInfo() {
+        $.getJSON("/info", function (response) {
+            let personalInformation = "<p>Личная информация</p>";
+            personalInformation += "<ul>";
+            personalInformation += "<li><strong>Город: </strong>"+ response.city + "</li>";
+            personalInformation += "<li><strong>Возраст: </strong>"+ response.age + "</li>";
+            personalInformation += "<li><strong>Гражданство: </strong>"+ response.citizenship + "</li>";
+            personalInformation += "<li><strong>Образование: </strong>"+ response.Univ + "</li>  </ul>";
+            personalInformation += "</ul>";
+            $("#info").append(personalInformation);
+
+
+        });
+    }
+</script>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Java_Lab</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    <label>
+                        <input type="text" placeholder="Email" class="form-control">
+                    </label>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#success_btn" onclick="function getEmail() {
+
+                    }
+                    getEmail()">Связаться со мной</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="success_btn" class="modal fade">
+    <div class="modal-dialog modal-sm>">
+        <div class="modal-content col-md-8 ">
+            <div class="modal-body ">
+                <strong>
+                    Успешно!
+                </strong>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" data-dismiss="modal">Close!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="myModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg>">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">x</button>
+                <h4 class="modal-title">Связаться с разрабом</h4>
+            </div>
+            <div class="modal-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id congue nunc. Ut
+                maximus mi in mauris dictum blandit. Sed molestie ex eu dolor luctus pharetra. Cras accumsan mollis
+                felis ac porta. Ut purus tellus, fringilla ac rutrum mattis, sagittis sed lorem. Vivamus consectetur
+                felis vel sapien egestas, sit amet tempor lacus facilisis. Nunc sodales nisi at leo bibendum
+                sollicitudin.
+                <div class="container">
+                    <form role="form" class="form-inline">
+                        <div class="form-group">
+                            <label for="Email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Введите email">
+                            <button type="button" class="btn btn-success">Связаться со мной</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Стенка разраба</h1>
+        <p>О себе</p>
+        <ul>
+            <li><strong>Город:</strong> Казань</li>
+            <li><strong>Возраст:</strong> 18</li>
+            <li><strong>Гражданство:</strong> ТМ</li>
+            <li><strong>Образование:</strong> КФУ ВШ ИТИС</li>
+        </ul>
+        <p><a href="#" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Узнать больше
+            &raquo;</a></p>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4" style="background-color: #F5DEB3">
+            <h2>HTML_CSS</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
+            </p>
+            <p><a href="#" class="btn btn-default" data-toggle="modal" data-target="#myModal">More &raquo;</a>
+            <p>
+        </div>
+
+
+        <div class="col-md-4" style="background-color: #F5DEB3">
+            <h2>Java(Junior)</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
+            </p>
+            <p><button onclick="getInfo()"></button>
+            <p>
+        </div>
+
+
+        <div class="col-md-4" style="background-color: #F5DEB3">
+            <h2>JS,NodeJS</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
+            </p>
+            <p><a href="#" class="btn btn-default" data-toggle="modal" data-target="#myModal">More &raquo;</a>
+            <p>
+        </div>
+    </div>
+</div>
+
+
+<hr>
+<footer>
+    <p>
+        <strong> &copy; Все права защищены 2020
+        </strong>
+    </p>
+</footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>

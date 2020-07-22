@@ -1,0 +1,11 @@
+GET http://localhost/info
+
+###
+POST http://localhost/info
+Content-Type: application/json
+
+{
+  "Email" : "fastrapier1@yandex.ru"
+  }
+
+###
